@@ -33,6 +33,7 @@ function request(url,type = 'GET',data = {}) {
 	})
 }
 const trans = '/api' //做调试转发
+// const trans = '';
 const url = {
 	imgUpload : trans+'/file/upload',//图片上传 
 	adminLogin : trans+'/admin/login',//后台登录
@@ -57,10 +58,15 @@ const url = {
 	newsDetails : trans+'/news/details',//新闻详情
 	newsList : trans+'/news/list',//新闻列表
 	newsUpdate : trans+'/news/update',//新闻更新
+	newsProduct : trans+'/news/product',//菜单查询详情
 	advantageAdd : trans+'/advantage/add',//优势增加
 	advantageDelete : trans+'/advantage/delete',//优势删除
 	advantageList : trans+'/advantage/list',//优势列表
 	advantageUpdate : trans+'/advantage/update',//优势更新
+	adAdd : trans+'/mid/banner/add',//广告添加
+  	adDelete : trans+'/mid/banner/delete',//广告删除
+  	adList : trans+'/mid/banner/list',//广告列表
+  	adUpdate : trans+'/mid/banner/update',//广告更新
 }
 
 export default {
@@ -133,6 +139,9 @@ export default {
 	newsUpdate(object){
 		return request(url.newsUpdate,'POST',object)
 	},
+	newsProduct(object){
+		return request(url.newsProduct,'POST',object)
+	},
 	advantageAdd(object){
 		return request(url.advantageAdd,'POST',object)
 	},
@@ -145,4 +154,16 @@ export default {
 	advantageUpdate(object){
 		return request(url.advantageUpdate,'POST',object)
 	},
+	adAdd(object){
+    	return request(url.adAdd,'POST',object)
+  	},
+  	adDelete(object){
+    	return request(url.adDelete,'POST',object)
+  	},
+  	adList(object){
+    	return request(url.adList,'POST',object)
+  	},
+  	adUpdate(object){
+    	return request(url.adUpdate,'POST',object)
+  	}
 }
